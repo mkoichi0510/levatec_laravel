@@ -11,7 +11,7 @@ class PostController extends Controller
     {
         return view('index')->with(['posts' => $post->getPaginateByLimit(5)]);  
     }
-    
+  
     /**
      * 特定IDのpostを表示する
      *

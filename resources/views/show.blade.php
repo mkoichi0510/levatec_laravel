@@ -12,8 +12,14 @@
         
     </head>
     <body>
-        <h1>Blog Name</h1>
+        <h1>Blog Name</h1>  
         <p class='edit'>[<a href="/posts/{{ $post->id }}/edit">edit</a>]</p>
+        <form name="deleteData" action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
+            @csrf
+            @method('DELETE')
+            <button name="delete" id="button" type="button">delete</button> 
+            <script type="text/javascript" src="{{ asset('/js/checkdelete.js')}}"></script>
+        </form>
         <div class='posts'>
                 <h2 class='title'>{{ $post->title }}</h2>
                 <p class='body'>{{ $post->body }}</p>

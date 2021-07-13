@@ -52,4 +52,8 @@ class PostController extends Controller
         $post->delete();
         return redirect('/');
     }
+    
+    public function detaile(Post $post){
+        return view('detaile')->with(['address' => $post->address]);
+    }
 }

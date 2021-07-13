@@ -24,4 +24,8 @@ class Post extends Model
         return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
         //return $this->paginate($limit_count);
     }
+    
+    public function address(){
+        return $this->hasOne('App\Address');
+    }
 }

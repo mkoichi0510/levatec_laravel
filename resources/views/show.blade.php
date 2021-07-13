@@ -25,6 +25,10 @@
                 <p class='body'>{{ $post->body }}</p>
                 <p class='updated_at'>{{ $post->updated_at }}</p>
         </div>
+        <form name="detaile" action="/posts/{{ $post->id }}/detaile" id="form_{{ $post->id }}" method="get" style="display:inline">
+            @csrf
+            <button type="submit">detaile</button> 
+        </form>
         <div class='back'>[<a href='/'>back</a>]</div>
     </body>
 </html>

@@ -56,4 +56,10 @@ class PostController extends Controller
     public function detaile(Post $post){
         return view('detaile')->with(['address' => $post->address]);
     }
+    
+    public function getBlogData(Post $post)
+    {
+        //$chats = ['post' => $post];//出品数もほしいため、withCountでitemテーブルのレコード数も取得
+        return response()->json($post);
+    }
 }

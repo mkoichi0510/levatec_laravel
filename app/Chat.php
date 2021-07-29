@@ -5,14 +5,14 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Post extends Model
+class Chat extends Model
 {
     use SoftDeletes;
     
-    protected $fillable = [
+    /*protected $fillable = [
         'title',
-        'body',
-    ];
+        'name',
+    ];*/
     
     public function getByLimit(int $limit_count = 10)
     {
@@ -25,9 +25,12 @@ class Post extends Model
         //return $this->paginate($limit_count);
     }
     
-    
-    
     public function address(){
         return $this->hasOne('App\Address');
+    }
+    
+    public function index(Chat $post)
+    {
+        return $post->get();
     }
 }

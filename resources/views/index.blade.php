@@ -12,6 +12,8 @@
         
     </head>
     <body>
+       <h1>Free Chat</h1>
+        <p class='chat'>[<a href='/chat'>chat</a>]</p>
        <h1>Blog Name</h1>
         <p class='create'>[<a href='/posts/create'>create</a>]</p>
         <div class='posts'>
